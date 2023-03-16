@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>카테고리</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="35MN3XKy"></script>
+
+<div class="top"><a href="#"></a></div>
 <div id="wrap">
   <header>
     <nav>
       <div class="logo">
         <a href="#"><img src="img/toplogo.jpg" alt=""></a>
         <span><i class="fa fa-bars"></i></span>
+        <ul class="mainmenu">
+          <li><a href="#none">브랜드</a></li>
+          <li><a href="#content2">제품소개</a></li>
+          <li><a href="#content3">레시피</a></li>
+          <li><a href="#none">갤러리</a></li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -25,7 +33,7 @@
         <ul>
           <li>
             <img src="img/slogo.gif" alt="">
-            <span>
+            <div>
               <h2>한국인의 매운맛, 한국을 대표하는 라면</h2>
               <br>
               신라면은 소고기를 주원료로 소고기 엑기스에 각종 천연 양념을 잘 조화시켜 만든, 전통 가정요리로부터 유래된 얼큰한 소고기국 맛의 제품입니다.
@@ -35,11 +43,11 @@
             <br>
             <br>
             아울러 국내에서의 인기 못지 않게 해외 100여개국에서도 사랑 받고 있으며, 국내에서 보다 훨씬 비싼 가격에 팔리고 있어, 더더욱 화제를 모으고 있는 제품입니다.
-            </span>
+            </div>
           </li>
           <li><img src="img/main2-10.jpg" alt=""></li>
           <li><img src="img/main4-1.png" alt=""></li>
-          <li><img src="img/main1-1.png" alt="">
+          <li><img src="img/main1-1.png" alt=""><p>text</p> </li>
         </ul>
       </div>
   
@@ -51,11 +59,10 @@
           <li class="indent">04</li>
         </ul>
       </div>
-  
+    </div>
   </main>
 
   <section>
-    
     <div class="content1">
       <div class="ctbody">
         <div class="sns">
@@ -64,6 +71,7 @@
             <p>신라면처럼! 세계를 울리는 농심 신라면</p>
           </div>
           <div class="instagram">
+            <span></span>
             <a href="#none">
               <img src="img/insimg1.jpg" alt="">
               <div class="instext">
@@ -77,9 +85,10 @@
       </div>
     </div>
 
-    <div class="content2">
+    <div id="content2">
+      <h1>제품소개</h1>
       <ul class="item_img1">
-        <li><a href="#none"><img src="img/m1.png" alt=""></a>
+        <li><a href="#none" class="active1"><img src="img/m1.png" alt=""></a>
         <p>신라면</p></li>
         <li><a href="#none"><img src="img/m2.png" alt=""></a><p>신라면블랙</p></li>
         <li><a href="#none"><img src="img/m3.png" alt=""></a><p>신라면건면</p></li>
@@ -96,7 +105,7 @@
       </ul>
     </div>
 
-    <div class="content3">
+    <div id="content3">
       <h1>누들푸들 레시피</h1>
       <div class="menu3">
         <div class="tabMenu">
@@ -132,15 +141,36 @@
             <p>새우대신 육류를 사용해도 좋습니다.</p>
           </div>
         </div>
-        <span>+레시피 더보기</span>
+        <p class="lowtxt">+ 레시피 더보기</p>
       </div>
     </div>
-    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnongshim&tabs=timeline&width=400&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="400" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+    <div class="mdimg">
+
+    </div>
+    <div class="content4">
+      <div class="fb-page" data-href="https://www.facebook.com/nongshim/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/nongshim/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/nongshim/">농심 (Nongshim)</a></blockquote></div>
+      <span class="fbtxt">농심 페이스북 <b>좋아요<i class="fa fa-thumbs-o-up"></i></b> 하고 더 많은 정보를 받아보세요!</span>
+      <div id="Sshow">
+        <div class="slide1">
+          <ul>
+            <li><a href="#none"><img src="img/zepeto2.jpg" alt=""></a></li>
+            <li><a href="#none"><img src="img/shinbokk1.jpg" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="slide_btn1">
+          <ul>
+            <li class="indent active"></li>
+            <li class="indent"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
     <div class="low">
-      <span>
+      <div>
         <img src="img/btlogo1.png" alt="" class="low_logo">
         <a href="#">개인정보처리방침</a> | <a href="#">이메일주소</a> | <a href="#">무단수집거부</a>
         <br>
@@ -151,17 +181,12 @@
         <br>
         <br>
         <p>COPYRIGHT(C) 2013 BY NONGSHIM CO.,LTD. ALL RIGHTS RESERVED. </p>
-      </span>
-      <div class="familysite">
-        
       </div>
       <div class="bt_sns">
         <a href="#none"><img src="img/facebook.svg" alt=""></a>
         <a href="#none"><img src="img/youtube.svg" alt=""></a>
         <a href="#none"><img src="img/instagram.svg" alt=""></a>
       </div>
-      
-      
     </div>
   </footer>
 </div>

@@ -48,6 +48,7 @@ $(document).ready(function(){
   //content2 라면종류
   $(".content2 ul li").click(function(){
 
+
   });
 
   //content3 레시피
@@ -64,4 +65,63 @@ $(document).ready(function(){
 
 
 
+  
+
+});
+$(document).ready(function(){
+  //content4 신제품
+  let $Simg=$(".slide1 ul");
+  let $Simgli=$(".slide1 ul li");
+  let $Sbtn=$(".slide_btn1 ul li");
+  let Simg_w=$Simgli.width();
+  let Simg_n=$Simgli.length; 
+  let Soldidx=0; 
+  let Sindex=0; 
+
+  function slideImg(Sindex){
+
+    targetX=-(Sindex*Simg_w) 
+
+    $Simg.stop(true,true).animate({left:targetX},1000); 
+    $Sbtn.eq(Soldidx).removeClass("active");
+    $Sbtn.eq(Sindex).addClass("active");
+    Soldidx=Sindex;
+  };
+  function slideAuto(){
+
+    Sindex++;
+    if(Sindex==Simg_n){
+      Sindex=0;
+    }
+    slideImg(Sindex);
+
+  };
+
+  auto=setInterval(slideAuto,4000);
+
+  $Sbtn.click(function(){
+
+    clearInterval(auto);
+    $(".play").hide();
+    $(".stop").show();
+    Sindex=$(this).index();
+    slideImg(Sindex);
+    auto=setInterval(slideAuto,4000);
+
+  });
+
+  $(".fa fa-bars").click(function(){
+    $(this).show()
+  });
+
+  $(window).scroll(function(){
+
+    let pos = $(window).scrollTop();
+
+    if(pos>50){
+      $('.top').addClass('active');
+    }else{
+      $('.top').removeClass('active');
+    }
+  });  
 });

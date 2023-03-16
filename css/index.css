@@ -4,11 +4,29 @@
 
 body{
   font-family: 'Gowun Dodum', sans-serif;
-  border-top: 10px solid darkred;
+  /* font-family: 'Gamja Flower', sans-serif; */
   height: 100vh;
 }
-body:not(header){
-  background-color: aliceblue;
+html{scroll-behavior: smooth;}
+.top{
+  position: fixed;
+  right: 25px;
+  bottom: 50px;
+  z-index: 1;
+  transform: translateY(200px);
+  opacity: 0;
+}
+.top a{
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../img/top1.png) no-repeat ;
+  transition: 0.35s;
+}
+.top a:hover{background-image: url(../img/top2.png);}
+.top.active{
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* header________________________________ */
@@ -19,10 +37,15 @@ header{
   justify-content: center;
   align-items: center;
   background-color: white;
+/*   border-bottom: 1px solid #000; */
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-top: 7px solid darkred;
+  z-index: 100;
 }
 nav{
   width: 1400px;
   height: inherit;
+
 }
 .logo{
   text-align: center;
@@ -40,9 +63,29 @@ nav{
   transform: translateX(400px);
   color: darkred;
 }
-.logo span:hover{
-  
+.mainmenu{
+  position: absolute;
+  text-align:center;
+  width: 1400px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 53px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
+.mainmenu li{
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 3px;
+  padding: 10px 50px;
+}
+.mainmenu li:hover{
+  transition: 0.3s;
+  color:rgb(255, 128, 82);
+  background-color: #810000;
+}
+
 /* main___________________________________ */
 main{
   width: 100%;
@@ -99,16 +142,16 @@ main{
   justify-content: center;
   align-items: center;
 }
-.slide li span{
-  width: 700px;
+.slide li div{
+  width: 600px;
   height: 500px;
   color: white;
   font-size: 23px;
   line-height: 40px;
 }
-.slide li span h2{
+.slide li div h2{
   background-color: rgba(0,0,0,0.6);
-  width: 800px;
+  width: 700px;
   height: 70px;
   text-align: center;
   margin-left: -50px;
@@ -131,6 +174,7 @@ main{
   justify-content: center;
   align-items: center;
 }
+
 .sns{
   width: 1400px;
   height: 500px;
@@ -145,6 +189,7 @@ main{
 }
 .youtube iframe{
   border-radius: 10px;
+  margin-top: 45px;
 }
 
 .instagram{
@@ -173,6 +218,7 @@ main{
   font-weight: 500;
   line-height: 35px;
   opacity: 0;
+  margin-top: 45px;
 }
 .instagram img{
   border-radius: 10px;
@@ -185,22 +231,35 @@ main{
 .instagram a:hover img{
   filter: blur(5px);
 }
+.instagram span:first-child{
+  background: url(../img/insnow.jpg) no-repeat;
+  width:125px;
+  height:25px;
+  display: block;
+  margin-bottom: 20px;
+}
 
 /* content2 */
-.content2{
-  height: 800px;
-  background-color: rgb(255, 255, 235);
-  /* 1줄만드려면 flex3줄 만들기 */
-  /* display: flex; 
-  align-items: center;
-  justify-content: center; */
+#content2{
+  height: 950px;
+  background-color: rgb(255, 249, 249);
 }
-.content2 li p{
+#content2 h1{
+  color: #222;
+  border-bottom: 1px solid #810000;
+  width: 150px;
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 10px;
+}
+#content2 li p{
   text-align: center;
   font-weight: bold;
   color: #444;
 }
-.content2 ul{
+#content2 ul{
   width: 1400px;
   height: 360px;
   margin: 10px auto;
@@ -208,74 +267,59 @@ main{
   align-items: center;
   justify-content: center;
 }
-.content2 ul li{
-  width: 200px;
-  height: 280px;
+#content2 ul li{
+  width: 180px;
+  height: 250px;
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 20px;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 0 20px 0 20px;
   background-color: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
-/*   animation: ani1 10s infinite; */
 }
-.content2 li:hover{
+#content2 li:hover{
   border: 1px solid rgba(255, 3, 3, 0.2);
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
 }
-.content2 li:hover p{
+#content2 li:hover p{
   color: red;
   font-weight: bold;
   transition: 0.35s;
 }
-.content2 li:hover img{
+#content2 li:hover img{
   transform: scale(1.1);
   transition: 0.35s;
   opacity: 1;
 }
-.content2 img:not(:hover){
+#content2 img:not(:hover){
   opacity: 0.8;
 }
-.content2 img{
-  width: 200px;
-  padding: 15px;
+#content2 img{
+  width: 180px;
+  padding: 20px;
   margin: auto;
 }
 
-@keyframes ani1{
-  0%{
-    transform: translateX(0);
-  }
-  25%{
-    transform: translateX(-50%);
-  }
-  50%{
-    transform: translateX(-100%);
-  }
-  75%{
-    transform: translateX(-50%);
-  }
-  100%{
-    transform: translateX(0);
-  }
-}
 
 /* content3 */
-.content3{
+#content3{
   margin: 100px 0;
   line-height: 25px;
-  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1200px;
+  height: 1500px;
   text-align: center;
   position: relative;
 }
-.content3 h1{
+#content3 h1{
   position: absolute;
   top:0;
   transform: translateY(50%);
+  padding: 10px;
+  width:200px;
+  margin-bottom: 100px;
+  border-bottom: 1px solid #910000;
 }
 .menu3{
   width:1100px;
@@ -284,13 +328,16 @@ main{
 .tab_btn li{
   float: left;
   width: 250px;
-  background-color: #eee;
-  border-right: 1px solid #ddd;
+  height:50px;
+  background-color: rgba(255, 3, 3, 0.5);
+  border-right: 1px solid rgba(189, 0, 0, 0.1);
   padding: 5px;
   border-top: 2px solid transparent;
   cursor: pointer;
   border-radius: 10px 10px 0 0;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 35px;
 }
 .tab_btn li:last-child {
   width: 250px;
@@ -298,20 +345,21 @@ main{
 }
 .tab_btn li:hover,
 .tab_btn li.active{
-  background-color: #fff;
-  border: 3px solid rgba(255, 3, 3, 0.5);
+  background-color: rgb(255, 255, 197);
+/*   border: 3px solid rgba(255, 3, 3, 0.5); */
   border-bottom: none;
   border-radius: 10px 10px 0 0;
   transition: 0.35s;
+  font-weight: bold;
 }
 
 .tabContents{
-  background-color: #fff;
+  background-color: rgb(255, 255, 197);
   padding: 50px;
   box-sizing: border-box;
   border-radius: 0 10px 10px 10px;
   height: 850px;
-  border: 3px solid rgba(255, 3, 3, 0.5);
+/*   border: 3px solid rgba(255, 3, 3, 0.5); */
   border-top: 1px solid rgba(189, 0, 0, 0.1);
 }
 .tabContents div{display: none;}
@@ -322,20 +370,106 @@ main{
   float: left;
   margin-right: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .tabContents p{
   margin-bottom: 20px;
+  font-size:18px;
 }
 .tabContents h4{
   margin-top: 15px;
+  font-size:19px;
 }
-.menu3 span{
+.lowtxt{
   color: darkred;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  margin-top:100px;
+  margin: 50px auto;
+  width:150px;
+  transition: 0.35s;
+}
+.lowtxt:hover{
+  color: red;
+}
+/* mdimg */
+.mdimg{
+  background: url(../img/img02.jpg);
+  background-size:cover;
+  width:100%;
+  height: 600px;
+  cursor:pointer;
+  margin-bottom: 300px;
+}
+/* content4 */
+.content4{
+  width:100%;
+  height: 700px;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fb-page{
+  left: 50%;
+  transform: translateX(-100%);
+  width: 600px;
+}
+.fbtxt{
+  display: block;
+  position: absolute;
+  left: 55%;
+  transform: translate(-150%,280px);
+  font-family: 'Gamja Flower', sans-serif;
+  font-size: 20px;
+}
+.fbtxt b{
+  color:rgb(47, 0, 255);
+  font-family: fontawesome; 
+  font-family: 'Gamja Flower', sans-serif;
+}
+.content4 p:last-child{
+  position:absolute;
+}
+
+#Sshow{
+  position: relative;
+  overflow: hidden; 
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+.slide1 ul{
+  position: absolute;
+  width: 1000px;
+}
+
+.slide1 ul li{
+  float: left;
+}
+
+.slide_btn1 {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide_btn1 ul li {
+  float: left;
+  background: #ffffff;
+  width: 20px;
+  height: 6px;
+  border-radius: 20%;
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+.slide_btn1 ul li.active {
+  background: #ffbb00;
+  width: 20px;
+  height: 6px;
+  border-radius: 20%;
 }
 
 /* footer_________________________________ */
@@ -353,7 +487,7 @@ footer{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 20px 50px;
+  margin: 20px auto;
 }
 .low p{
   color: gray;
@@ -371,12 +505,6 @@ footer{
   margin: 5px;
 }
 .bt_sns a:hover{
-  filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-  opacity: 0.9;
+  opacity: 0.5;
 }
-/* .familysite{
-  border: 1px solid #000;
-  width: 170px;
-  height: 35px;
-} */
 
