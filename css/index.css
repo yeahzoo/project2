@@ -90,7 +90,7 @@ nav{
 main{
   width: 100%;
   height: 690px;
-  background-color: darkred;
+  background-color: white;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -394,12 +394,11 @@ main{
 }
 /* mdimg */
 .mdimg{
-  background: url(../img/img02.jpg);
-  background-size:cover;
-  width:100%;
-  height: 600px;
   cursor:pointer;
   margin-bottom: 300px;
+}
+.mdimg img{
+  width:100vw;
 }
 /* content4 */
 .content4{
